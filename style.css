@@ -1,0 +1,142 @@
+:root {
+    --ink-black: #1a1a1a;
+    --paper-white: #fafafa;
+    --comic-yellow: #f1c40f;
+    --primary-green: #2d4c4a;
+    --accent-orange: #e67e22;
+}
+
+body {
+    background-color: #333;
+    font-family: 'Open Sans', sans-serif;
+    display: flex;
+    justify-content: center;
+    margin: 0;
+    padding: 20px;
+}
+
+.resume-container {
+    background-color: var(--paper-white);
+    width: 210mm;
+    height: 297mm;
+    display: flex;
+    border: 5px solid var(--ink-black);
+    box-shadow: 15px 15px 0px var(--ink-black);
+    overflow: hidden;
+}
+
+/* SIDEBAR */
+.sidebar {
+    width: 32%;
+    background-color: var(--primary-green);
+    color: white;
+    padding: 20px;
+    border-right: 5px solid var(--ink-black);
+    display: flex;
+    flex-direction: column;
+}
+
+.profile-box {
+    border: 4px solid var(--ink-black);
+    background: white;
+    padding: 5px;
+    transform: rotate(-2deg);
+    box-shadow: 4px 4px 0px var(--ink-black);
+    margin-bottom: 15px;
+}
+
+.profile-img { width: 100%; display: block; }
+
+/* TITRES SIDEBAR AVEC CONTOUR NOIR */
+.section-title {
+    font-family: 'Bangers', cursive;
+    font-size: 1.4rem;
+    color: var(--comic-yellow);
+    margin-top: 18px;
+    margin-bottom: 8px;
+    border-bottom: 2px solid var(--comic-yellow);
+    text-shadow: 
+        -1px -1px 0 #000,  
+         1px -1px 0 #000,
+        -1px  1px 0 #000,
+         1px  1px 0 #000;
+    letter-spacing: 1px;
+}
+
+.side-list { list-style: none; padding: 0; font-size: 0.85rem; margin: 0; }
+.side-list li { margin-bottom: 6px; }
+
+.progress-bar {
+    height: 12px;
+    background: white;
+    border: 2px solid var(--ink-black);
+    margin-top: 3px;
+}
+
+.progress-fill { height: 100%; background-color: var(--comic-yellow); }
+
+.halftone {
+    background-image: radial-gradient(var(--ink-black) 15%, transparent 20%);
+    background-size: 4px 4px;
+}
+
+.software-grid { display: flex; flex-wrap: wrap; gap: 5px; margin-top: 5px; }
+.tag {
+    background: white; color: var(--ink-black); padding: 2px 6px;
+    font-size: 0.7rem; font-weight: bold; border: 2px solid var(--ink-black);
+    box-shadow: 2px 2px 0px var(--ink-black);
+}
+
+/* PORTFOLIO CLIQUABLE */
+.qr-code-section { margin-top: auto; padding-top: 10px; text-align: center; }
+.qr-link { text-decoration: none; display: inline-block; transition: transform 0.2s; }
+.qr-link:hover { transform: scale(1.05); }
+
+.qr-container {
+    background: white; padding: 8px; border: 3px solid var(--ink-black);
+    box-shadow: 4px 4px 0px var(--comic-yellow);
+    transform: rotate(3deg);
+}
+.qr-img { width: 80px; height: 80px; display: block; margin: 0 auto; }
+.qr-text { font-family: 'Bangers', cursive; color: var(--ink-black); margin-top: 5px; font-size: 0.8rem; }
+
+/* MAIN CONTENT */
+.main-content { width: 68%; padding: 25px 35px; }
+
+.hero-header { position: relative; margin-bottom: 25px; }
+
+/* BADGE AJUSTÉ POUR LE PRINT */
+.comic-badge { 
+    position: absolute; top: -5px; right: -5px; width: 95px; height: 45px; 
+    cursor: pointer; z-index: 20; transform: rotate(12deg); 
+}
+.badge-layer { 
+    position: absolute; top: 0; left: 0; width: 100%; height: 100%; 
+    display: flex; align-items: center; justify-content: center; 
+    font-family: 'Bangers', cursive; font-size: 1.4rem; border: 3px solid var(--ink-black); 
+}
+.badge-layer.front { background-color: var(--accent-orange); color: white; z-index: 2; }
+.badge-layer.shadow { background-color: var(--ink-black); transform: translate(4px, 4px); z-index: 1; }
+
+.name-box { border: 4px solid var(--ink-black); padding: 15px; background: white; box-shadow: 6px 6px 0px var(--ink-black); }
+.name { font-family: 'Bangers', cursive; font-size: 2.5rem; margin: 0; line-height: 1; }
+.title { color: var(--primary-green); font-weight: bold; font-size: 0.9rem; margin-top: 5px; }
+
+.main-section-title { font-family: 'Bangers', cursive; font-size: 1.8rem; border-bottom: 4px solid var(--ink-black); margin: 20px 0 10px 0; }
+
+.exp-card { border: 3px solid var(--ink-black); padding: 12px; margin-bottom: 10px; background: white; box-shadow: 4px 4px 0px var(--ink-black); }
+.exp-card.highlight { border-color: var(--accent-orange); box-shadow: 4px 4px 0px var(--accent-orange); }
+.exp-card h3 { margin: 0; font-size: 1rem; }
+
+.lab-card { border: 3px dashed var(--ink-black); background-color: #fffdf5; position: relative; }
+.lab-badge { position: absolute; top: -10px; right: 10px; background: var(--comic-yellow); color: var(--ink-black); font-family: 'Bangers', cursive; font-size: 0.7rem; padding: 2px 6px; border: 2px solid var(--ink-black); transform: rotate(3deg); }
+
+.date { font-weight: bold; color: var(--accent-orange); font-size: 0.85rem; }
+.exp-list { list-style: none; padding: 0; margin-top: 5px; font-size: 0.9rem; }
+.exp-list li::before { content: "⚡ "; color: var(--accent-orange); font-weight: bold; }
+
+@media print {
+    body { background: white; padding: 0; }
+    .resume-container { width: 210mm; height: 297mm; box-shadow: none; border: none; }
+    .comic-badge { top: 0px; right: 0px; } /* Sécurité supplémentaire print */
+}
