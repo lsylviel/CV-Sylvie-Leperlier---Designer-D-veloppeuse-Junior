@@ -1,1 +1,0 @@
-# CV-Sylvie-Leperlier---Designer-D-veloppeuse-Junior
